@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 @Entity(name = "tb_users")

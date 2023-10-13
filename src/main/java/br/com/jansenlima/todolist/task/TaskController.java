@@ -1,5 +1,6 @@
 package br.com.jansenlima.todolist.task;
 
+import br.com.jansenlima.todolist.utils.Utils;
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -65,9 +66,8 @@ public class TaskController {
     @PathVariable UUID id,
     HttpServletRequest request
   ) {
-    var idUser = request.getAttribute("IdUser");
-    taskModel.setIdUser((UUID) idUser);
-    taskModel.setId(id);
-    return this.taskRepository.save(taskModel);
+    var task = this.taskRepository.findById(id).orElse(null);
+    Utils.copyNonNullProperties(taskModel, task);
+    return this.taskRepository.save(task);
   }
 }

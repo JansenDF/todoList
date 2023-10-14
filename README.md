@@ -1,2 +1,2 @@
 # todoList
-Aplicação em Java de Lista de Tarefas
+Aplicação em Java com Spring Boot de Lista de Tarefas
